@@ -22,6 +22,7 @@ Then open http://127.0.0.1:8000/index.html (or double-click `start-server.bat`).
 | File | What it holds |
 |---|---|
 | `index.html` | The structure and content (Lessons 1–5) |
+| `images/ghana-flag.svg` | The Ghana flag image |
 | `styles.css` | All the styling and layout (Lessons 6–7) |
 | `script.js` | All the interactivity (Lessons 8–9) |
 
@@ -34,10 +35,10 @@ Then open http://127.0.0.1:8000/index.html (or double-click `start-server.bat`).
 | 1 – How the web works | Served by a local web server, viewed at `http://127.0.0.1:8000` |
 | 2 – HTML basics, head, metadata | `<meta charset>`, `viewport`, `author`, `description`, `<title>`, comments |
 | 3 – Text, lists, structure | `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`; `ul`, `ol`, `dl`; `em`, `strong` |
-| 4 – Links | In-page links `#explore`, `#quiz`, `#planner`, `#top` |
+| 4 – Links, tables, images | In-page links (`#explore`, `#quiz`, `#planner`, `#top`); external link to the Ghana Tourism Authority with `target="_blank"` and `rel="noopener noreferrer"`; the transport table (`caption`, `thead`, `tbody`, `tfoot`, `th scope`, `colspan`); the flag image (`img` with `src`, `alt`, `width`, `height` inside `figure` + `figcaption`) |
 | 5 – Forms and HTML APIs | Quiz and planner forms: `fieldset`, `legend`, `label`, radio, checkbox, `select`, number inputs with `min`/`max`; `<noscript>`; `addEventListener`, `hidden` |
 | 6 – CSS basics | External stylesheet, type/class/descendant selectors, grouping, `:hover`, `:has(:checked)`, gradients, `rgb()` colours, `transform`, `calc()`, shorthands, comments |
-| 7 – Box model and responsive design | `box-sizing: border-box`, `display: block / inline-block`, padding/margin/border, flexbox (nav, stats, breakdown), grid (cards, planner, quiz), mobile-first `@media (width >= ...)`, `calc(2rem + 4vw)` heading, viewport meta tag |
+| 7 – Box model and responsive design | `img { max-width: 100% }` responsive image, `box-sizing: border-box`, `display: block / inline-block`, padding/margin/border, flexbox (nav, stats, breakdown), grid (cards, planner, quiz), mobile-first `@media (width >= ...)`, `calc(2rem + 4vw)` heading, viewport meta tag |
 | 8 – Exploring JavaScript | `console.log`, `const` and `let`, arrays, functions with parameters and `return`, arithmetic, `getElementById` + `textContent`, `toFixed(2)` |
 | 9 – Expressions and control flow | `if / else if / else`, `switch`, comparison (`===`, `<`, `>=`), logical (`&&`, `||`), ternary `? :`, `for` loops, `++`, `%` |
 
@@ -99,6 +100,13 @@ every time anything in the planner changes.
 | What does `grid-template-columns: 1fr 1fr` do? | Two equal columns; `fr` shares the free space. |
 | What does `calc(2rem + 4vw)` do? | Heading grows with the screen width but can still be zoomed. |
 | What does `:has(:checked)` do? | Styles a label that contains a checked radio/checkbox. |
+| What is the `alt` attribute for? | Describes the image for screen readers, and shows if the image fails to load. |
+| Why `width` and `height` on the image? | The browser saves the space before the image loads, so the page doesn't jump. |
+| What do `figure` and `figcaption` do? | Group an image with its caption. |
+| What do `caption` and `scope` do in the table? | `caption` is the table's title; `scope="col"`/`"row"` tells screen readers which cells a heading belongs to. |
+| What does `colspan="4"` do? | Makes the footer cell stretch across all 4 columns. |
+| Why `target="_blank"` and `rel="noopener noreferrer"`? | Opens the link in a new tab; `rel` stops the new page from controlling this one (a safety measure). |
+| What does `img { max-width: 100% }` do? | The image shrinks to fit small screens but never grows past its real size. |
 
 ## Small extras (one line each, outside the lessons)
 
