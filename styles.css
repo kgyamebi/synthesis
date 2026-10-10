@@ -1,0 +1,525 @@
+/* Akwaaba Ghana - Kofi-Asante Gyamebi (02522028)
+   Colours from the Ghana flag: red #ce1126, gold #fcd116, green #006b3f */
+
+
+/* ---------- Box model and base styles (Lesson 7) ---------- */
+
+/* the alternative box model for every element */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font: 1em/1.6 "Segoe UI", "Helvetica", "Arial", sans-serif;
+  color: #1d1d1d;
+  background-color: #fbf8f1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Georgia", serif;
+  line-height: 1.2;
+}
+
+a {
+  color: #006b3f;
+}
+
+.noscript {
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+  background-color: #ce1126;
+  color: white;
+}
+
+
+/* ---------- Hero banner ---------- */
+
+.hero {
+  color: white;
+  background: linear-gradient(135deg, #003d24, #006b3f 60%, #0b8a52);
+}
+
+/* flexbox puts the logo and the links on one row */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 5%;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #fcd116;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* inline-block lets the links take padding (from the box model lesson) */
+.nav-links a {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.nav-links a:hover {
+  background-color: rgb(255 255 255 / 0.15);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  align-items: center;
+  max-width: 80em;
+  margin: 0 auto;
+  padding: 3em 5% 4em;
+}
+
+/* a see-through "glass" box on the right of the banner */
+.glance {
+  padding: 1.5em 2em;
+  border: 1px solid rgb(255 255 255 / 0.25);
+  border-radius: 20px;
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.glance-emoji {
+  margin: 0;
+  font-size: 3em;
+}
+
+.glance h2 {
+  margin: 0 0 0.5em;
+  color: #fcd116;
+}
+
+.glance dt {
+  color: #cde8da;
+  font-size: 0.85em;
+}
+
+.glance dd {
+  margin: 0 0 0.8em;
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.greeting {
+  display: inline-block;
+  margin: 0;
+  padding: 0.3em 1em;
+  background-color: rgb(255 255 255 / 0.15);
+  border-radius: 999px;
+}
+
+/* responsive text: grows with the width of the screen */
+.hero h1 {
+  font-size: calc(2rem + 4vw);
+  margin: 0.3em 0;
+}
+
+.hero h1 em {
+  color: #fcd116;
+  font-style: normal;
+}
+
+.tagline {
+  font-size: 1.15em;
+  max-width: 34em;
+}
+
+/* the red, gold and green stripes of the flag */
+.flag-stripe {
+  height: 8px;
+  background: linear-gradient(90deg, #ce1126 33.3%, #fcd116 33.3% 66.6%, #006b3f 66.6%);
+}
+
+
+/* ---------- Buttons ---------- */
+
+.button {
+  display: inline-block;
+  margin: 0.4em 0.4em 0.4em 0;
+  padding: 0.8em 1.6em;
+  border: 2px solid #fcd116;
+  border-radius: 999px;
+  background-color: #fcd116;
+  color: #1d1d1d;
+  font: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+/* without this, display: inline-block above would beat the hidden attribute */
+.button[hidden] {
+  display: none;
+}
+
+.button-outline {
+  background-color: transparent;
+  color: white;
+}
+
+
+/* ---------- Stats bar ---------- */
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  padding: 1.5em 5%;
+  background-color: #1d1d1d;
+  color: #ddd;
+}
+
+.stat {
+  padding: 0 1em;
+}
+
+.stat strong {
+  color: #fcd116;
+  font-size: 1.3em;
+}
+
+
+/* ---------- Sections ---------- */
+
+.section {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 4em 5%;
+}
+
+.section h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.section-intro {
+  color: #555;
+  margin-top: 0.3em;
+}
+
+
+/* ---------- Explore: filter buttons and cards ---------- */
+
+.filter {
+  display: inline-block;
+  margin: 0.3em 0.3em 0.3em 0;
+  padding: 0.5em 1.2em;
+  border: 2px solid #006b3f;
+  border-radius: 999px;
+  background-color: white;
+  color: #006b3f;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter:hover,
+.filter.active {
+  background-color: #006b3f;
+  color: white;
+}
+
+.filter-result {
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* grid: 1 column on phones, more columns on bigger screens (media queries below) */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+
+.card {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.08);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-image {
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  font-size: 4em;
+}
+
+/* descendant selectors give each kind of place its own colours */
+.beach .card-image {
+  background: linear-gradient(135deg, #4fc3f7, #fcd116);
+}
+
+.nature .card-image {
+  background: linear-gradient(135deg, #2e7d32, #9ccc65);
+}
+
+.history .card-image {
+  background: linear-gradient(135deg, #6d4c41, #ce1126);
+}
+
+.card-body {
+  padding: 1em 1.2em 1.4em;
+}
+
+.card-body h3 {
+  margin: 0.2em 0;
+}
+
+.tag {
+  margin: 0;
+  color: #006b3f;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+
+/* ---------- Panels, forms and options (quiz + planner) ---------- */
+
+.panel {
+  padding: 1.5em;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.08);
+}
+
+fieldset {
+  margin: 0 0 1.2em;
+  padding: 0;
+  border: none;
+}
+
+legend {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+
+/* each answer is a block-level box you can click anywhere on */
+.option {
+  margin-bottom: 0.5em;
+  padding: 0.7em 1em;
+  border: 2px solid #e5e0d5;
+  border-radius: 12px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.option:hover {
+  border-color: #006b3f;
+}
+
+/* highlight the answer that is picked */
+.option:has(:checked) {
+  border-color: #006b3f;
+  background-color: #e8f5ee;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.6em;
+  border: 2px solid #e5e0d5;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.hint {
+  color: #555;
+  font-size: 0.9em;
+}
+
+.error {
+  color: #ce1126;
+  font-weight: bold;
+}
+
+
+/* ---------- Quiz result ---------- */
+
+.quiz-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  align-items: start;
+}
+
+.result {
+  padding: 2em;
+  text-align: center;
+  color: white;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #006b3f, #003d24);
+}
+
+.result-emoji {
+  margin: 0;
+  font-size: 4em;
+}
+
+.result-label {
+  margin: 0;
+  color: #fcd116;
+}
+
+.result h3 {
+  margin: 0.2em 0;
+  font-size: 2em;
+}
+
+
+/* ---------- Planner summary ---------- */
+
+.planner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+
+.summary {
+  color: white;
+  background: linear-gradient(160deg, #1d1d1d, #003d24);
+}
+
+.summary-label {
+  margin: 0;
+  color: #ccc;
+}
+
+.total {
+  margin: 0;
+  color: #fcd116;
+  font-size: 2.6em;
+  font-weight: bold;
+}
+
+.per-person {
+  margin-top: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3em 1em;
+  border-radius: 999px;
+  background-color: #ce1126;
+  font-weight: bold;
+}
+
+.breakdown {
+  list-style: none;
+  padding: 0;
+}
+
+/* flexbox pushes each price to the right of its row */
+.breakdown li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.day-plan li {
+  margin-bottom: 0.3em;
+}
+
+
+/* ---------- Footer ---------- */
+
+.footer {
+  padding-bottom: 1.5em;
+  text-align: center;
+  color: #ccc;
+  background-color: #1d1d1d;
+}
+
+.footer a {
+  color: #fcd116;
+}
+
+
+/* ---------- Responsive layout: mobile first, then bigger screens ---------- */
+
+@media (width >= 40em) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 56em) {
+  .planner,
+  .quiz-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (width >= 70em) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  /* stop the heading growing too big on very wide screens */
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Kofi-Asante Gyamebi">
+  <meta name="description" content="Akwaaba Ghana: discover places to visit in Ghana, find your perfect trip and plan your budget.">
+  <title>Akwaaba Ghana | Discover and Plan Your Trip</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!--
+    Akwaaba Ghana - Kofi-Asante Gyamebi (02522028)
+    HTML: structure, links, lists, forms   CSS: selectors, box model, flexbox, grid, media queries
+    JavaScript (script.js): variables, arrays, functions, if/else, switch, loops, DOM
+  -->
+
+  <noscript>
+    <p class="noscript">Please enable JavaScript to use the trip quiz and budget planner.</p>
+  </noscript>
+
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a class="logo" href="#top">Akwaaba<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#explore">Explore</a></li>
+        <li><a href="#quiz">Trip quiz</a></li>
+        <li><a href="#planner">Planner</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="greeting" id="greeting">Akwaaba!</p>
+        <h1>Discover the <em>beauty</em> of Ghana</h1>
+        <p class="tagline">
+          Golden beaches, rainforests, waterfalls and castles.
+          Find the trip that fits you and plan your budget in seconds.
+        </p>
+        <p>
+          <a class="button" href="#quiz">Take the trip quiz</a>
+          <a class="button button-outline" href="#planner">Plan a budget</a>
+        </p>
+      </div>
+
+      <aside class="glance">
+        <p class="glance-emoji">🌴</p>
+        <h2>Ghana at a glance</h2>
+        <dl>
+          <dt>Akwaaba means</dt>
+          <dd>Welcome (in Twi)</dd>
+          <dt>Capital</dt>
+          <dd>Accra</dd>
+          <dt>Currency</dt>
+          <dd>Ghana cedi (GH₵)</dd>
+          <dt>Best time to visit</dt>
+          <dd>November to March</dd>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="flag-stripe"></div>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><strong>16</strong> regions</div>
+    <div class="stat"><strong>539 km</strong> of coastline</div>
+    <div class="stat"><strong id="place-count">8</strong> places in this guide</div>
+  </section>
+
+  <main>
+
+    <!-- ===== 1. EXPLORE: cards filtered with JavaScript ===== -->
+    <section class="section" id="explore">
+      <h2>Explore Ghana</h2>
+      <p class="section-intro">Choose the kind of trip you like and the places will filter.</p>
+
+      <div class="filters">
+        <button class="filter active" type="button" value="all">All</button>
+        <button class="filter" type="button" value="beach">Beaches</button>
+        <button class="filter" type="button" value="nature">Nature</button>
+        <button class="filter" type="button" value="history">History</button>
+      </div>
+      <p class="filter-result" id="filter-result">Showing 8 of 8 places</p>
+
+      <div class="cards">
+        <article class="card beach">
+          <div class="card-image">🏖️</div>
+          <div class="card-body">
+            <p class="tag">Beach · Greater Accra</p>
+            <h3>Labadi Beach</h3>
+            <p>Accra's liveliest beach, with music, horse rides and fresh coconut.</p>
+            <p class="price">From GH₵ 250 a day</p>
+          </div>
+        </article>
+
+        <article class="card beach">
+          <div class="card-image">🌊</div>
+          <div class="card-body">
+            <p class="tag">Beach · Western Region</p>
+            <h3>Busua Beach</h3>
+            <p>A calm, golden bay that is perfect for swimming and learning to surf.</p>
+            <p class="price">From GH₵ 300 a day</p>
+          </div>
+        </article>
+
+        <article class="card nature">
+          <div class="card-image">🌳</div>
+          <div class="card-body">
+            <p class="tag">Nature · Central Region</p>
+            <h3>Kakum National Park</h3>
+            <p>Walk across rope bridges high above the rainforest on the canopy walkway.</p>
+            <p class="price">From GH₵ 280 a day</p>
+          </div>
+        </article>
+
+        <article class="card nature">
+          <div class="card-image">💧</div>
+          <div class="card-body">
+            <p class="tag">Nature · Volta Region</p>
+            <h3>Wli Waterfalls</h3>
+            <p>One of the highest waterfalls in West Africa, reached by a forest hike.</p>
+            <p class="price">From GH₵ 220 a day</p>
+          </div>
+        </article>
+
+        <article class="card nature">
+          <div class="card-image">🐘</div>
+          <div class="card-body">
+            <p class="tag">Nature · Savannah Region</p>
+            <h3>Mole National Park</h3>
+            <p>Go on a walking safari and see elephants, antelope and baboons up close.</p>
+            <p class="price">From GH₵ 400 a day</p>
+          </div>
+        </article>
+
+        <article class="card history">
+          <div class="card-image">🏰</div>
+          <div class="card-body">
+            <p class="tag">History · Central Region</p>
+            <h3>Cape Coast Castle</h3>
+            <p>A UNESCO World Heritage Site that tells the powerful story of the slave trade.</p>
+            <p class="price">From GH₵ 260 a day</p>
+          </div>
+        </article>
+
+        <article class="card history">
+          <div class="card-image">⭐</div>
+          <div class="card-body">
+            <p class="tag">History · Greater Accra</p>
+            <h3>Kwame Nkrumah Memorial Park</h3>
+            <p>The resting place of Ghana's first president, where independence was declared.</p>
+            <p class="price">From GH₵ 200 a day</p>
+          </div>
+        </article>
+
+        <article class="card history">
+          <div class="card-image">👑</div>
+          <div class="card-body">
+            <p class="tag">History · Ashanti Region</p>
+            <h3>Manhyia Palace Museum</h3>
+            <p>Step inside the old palace of the Asantehene, king of the Ashanti, in Kumasi.</p>
+            <p class="price">From GH₵ 240 a day</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 2. QUIZ: radio buttons + if/else + switch ===== -->
+    <section class="section quiz-section" id="quiz">
+      <h2>Which Ghana trip is right for you?</h2>
+      <p class="section-intro">Answer three quick questions and we will pick a place for you.</p>
+
+      <div class="quiz-layout">
+      <form class="panel quiz" id="quiz-form">
+        <fieldset>
+          <legend>1. Your perfect Saturday morning is...</legend>
+          <label class="option"><input type="radio" name="q1" value="beach"> Relaxing in the sun to the sound of waves</label>
+          <label class="option"><input type="radio" name="q1" value="nature"> Hiking somewhere green and wild</label>
+          <label class="option"><input type="radio" name="q1" value="history"> Exploring a museum or an old building</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Which photo would you post?</legend>
+          <label class="option"><input type="radio" name="q2" value="beach"> A sunset over the ocean</label>
+          <label class="option"><input type="radio" name="q2" value="nature"> A waterfall or an elephant</label>
+          <label class="option"><input type="radio" name="q2" value="history"> Me in front of a famous landmark</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Your friends describe you as...</legend>
+          <label class="option"><input type="radio" name="q3" value="beach"> The chilled one</label>
+          <label class="option"><input type="radio" name="q3" value="nature"> The adventurer</label>
+          <label class="option"><input type="radio" name="q3" value="history"> The curious one</label>
+        </fieldset>
+
+        <button class="button" type="submit">Show my trip</button>
+        <p class="error" id="quiz-error"></p>
+      </form>
+
+      <div class="result" id="quiz-result">
+        <p class="result-emoji" id="result-emoji">🧭</p>
+        <p class="result-label">Your perfect trip is...</p>
+        <h3 id="result-place">A mystery!</h3>
+        <p id="result-text">Answer the three questions to find out where you should go.</p>
+        <a class="button" href="#planner" id="plan-this" hidden>Plan this trip</a>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. PLANNER: form + functions + calculations + loop ===== -->
+    <section class="section" id="planner">
+      <h2>Trip budget planner</h2>
+      <p class="section-intro">Change anything and your budget updates straight away.</p>
+
+      <div class="planner">
+        <form class="panel" id="planner-form">
+          <label for="place">Where are you going?</label>
+          <select id="place" name="place">
+            <option value="0">Labadi Beach</option>
+            <option value="1">Busua Beach</option>
+            <option value="2">Kakum National Park</option>
+            <option value="3">Wli Waterfalls</option>
+            <option value="4">Mole National Park</option>
+            <option value="5" selected>Cape Coast Castle</option>
+            <option value="6">Kwame Nkrumah Memorial Park</option>
+            <option value="7">Manhyia Palace Museum</option>
+          </select>
+
+          <div class="two-columns">
+            <div>
+              <label for="days">Days (1 to 14)</label>
+              <input type="number" id="days" name="days" min="1" max="14" value="3">
+            </div>
+            <div>
+              <label for="travellers">Travellers (1 to 10)</label>
+              <input type="number" id="travellers" name="travellers" min="1" max="10" value="2">
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>How will you travel?</legend>
+            <label class="option"><input type="radio" name="transport" value="trotro" checked> Trotro (GH₵ 60 each)</label>
+            <label class="option"><input type="radio" name="transport" value="bus"> STC bus (GH₵ 120 each)</label>
+            <label class="option"><input type="radio" name="transport" value="car"> Private car (GH₵ 300 each)</label>
+          </fieldset>
+
+          <label class="option"><input type="checkbox" id="guide" name="guide"> Add a tour guide (GH₵ 150 a day)</label>
+
+          <p class="hint">Groups of 4 or more staying 3 days or more get 10% off.</p>
+          <p class="error" id="planner-error"></p>
+        </form>
+
+        <div class="panel summary">
+          <p class="summary-label">Estimated total for <span id="summary-place">your trip</span></p>
+          <p class="total" id="total">GH₵ 0.00</p>
+          <p class="per-person" id="per-person"></p>
+          <p class="badge" id="budget-level"></p>
+
+          <ul class="breakdown">
+            <li>Stay and food <span id="stay-cost">GH₵ 0.00</span></li>
+            <li>Transport <span id="transport-cost">GH₵ 0.00</span></li>
+            <li>Tour guide <span id="guide-cost">GH₵ 0.00</span></li>
+            <li>Group discount <span id="discount">GH₵ 0.00</span></li>
+          </ul>
+
+          <h3>Your day-by-day plan</h3>
+          <ol class="day-plan" id="day-plan"></ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="flag-stripe"></div>
+    <p>Made with love for Ghana by <strong>Kofi-Asante Gyamebi</strong> (02522028)</p>
+    <p>Web Technologies · Ashesi University · <span id="year">2026</span></p>
+    <p><a href="#top">Back to top</a></p>
+  </footer>
+
+</body>
+</html>
